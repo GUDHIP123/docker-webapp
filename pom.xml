@@ -25,8 +25,8 @@
     </properties>
 
     <dependencies>
-        <!-- Spring, Hibernate, DB, Logging, etc. (unchanged) -->
-        <!-- ... -->
+        <!-- Your existing dependencies go here -->
+        <!-- For brevity, I omitted them here -->
 
         <!-- Updated Test Dependencies -->
         <dependency>
@@ -69,27 +69,28 @@
                     <execution>
                         <id>jacoco-initialize</id>
                         <phase>process-resources</phase>
-                        <goals><goal>prepare-agent</goal></goals>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
                     </execution>
                     <execution>
                         <id>jacoco-site</id>
                         <phase>post-integration-test</phase>
-                        <goals><goal>report</goal></goals>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
                     </execution>
                 </executions>
-         <plugins>
-        
-             <plugin>
+            </plugin>
+
+            <!-- Sonar Maven Plugin -->
+            <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
                 <version>3.9.1.2184</version>
-             </plugin>
-        
-        <!-- Jacoco and Jetty plugins you already added -->
-        </plugins>
-           
+            </plugin>
 
-            <!-- Jetty Plugin (unchanged) -->
+            <!-- Jetty Plugin -->
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
